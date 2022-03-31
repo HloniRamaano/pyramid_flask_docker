@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
+    <title>My To Do List</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a href="../" class="navbar-brand">My To Do List</a>
+        </div>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:6543/add">
+                  Add
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:6543/search">
+                  Search
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <br/><br/>
+    
+    <div class="container">
+        <center>
+        <h2> Welcome to My To Do List</h2>
+        </center>
+        <div class="row">
+            <div class="col-sm-6">
+                <center>
+                <a href="http://127.0.0.1:6543/add" type="button" class="btn btn-primary">Add Item</a>
+                </center>
+            </div>
+            <div class="col-sm-6">
+                <center>
+                <a href="http://127.0.0.1:6543/search" type="button" class="btn btn-info">Search Item</a>
+                </center>
+            </div>
+        </div>
+        <br/>
+        {% block content %}
+        <div class="bs-docs-session clearfix">
+            <div class="list-group">
+                {% for item in Lists %}
+                    <a href="#" class="list-group-item">{{ item['item'] }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endblock %}
+        
+    </div>
+
+</body>
+</html>
